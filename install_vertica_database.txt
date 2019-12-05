@@ -1,0 +1,29 @@
+$> sudo yum install dialog
+
+To change SELinux to use permissive mode:
+
+Edit /etc/selinux/config and change setting for SELINUX to permissive
+	(SELINUX=Permissive).
+As root/sudo, type:
+	setenforce Permissive 
+
+to switch to permissive mode immediately.
+
+$> sudo rpm -Uvh vertica-9.3.0-0.x86_64.RHEL6.rpm
+
+$> sudo /opt/vertica/sbin/install_vertica --hosts %HOST_IP% --rpm vertica-9.3.0-0.x86_64.RHEL6.rpm --failure-threshold FAIL --license CE --accept-eula
+	%HOST_IP% can be host ip or local 127.0.0.1
+
+Enable vertical port 5433
+
+$> sudo firewall-cmd --zone=public --add-port=5433/udp --permanent
+$> sudo firewall-cmd --zone=public --add-port=5433/tcp --permanent
+$> sudo firewall-cmd --reload
+
+
+
+================
+
+https://www.vertica.com/docs/9.3.x/HTML/Content/Authoring/InstallationGuide/BeforeYouInstall/SELinux.htm?cshid=S0081
+https://forum.vertica.com/discussion/240523/accept-the-eula-when-installing-vertica
+https://www.vertica.com/docs/9.2.x/HTML/Content/Authoring/GettingStartedGuide/UsingVerticaInterfaces/RunningAdminTools.htm

@@ -1,0 +1,12 @@
+# vi /etc/systemd/system/foodmart_vertica.service
+[Unit]
+Description=Stop VMart database and start foodmart datavase
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/dbadmin/Documents/foodmart/vertica_files/database_stop_start.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,1 @@
+ vsql -w pentaho06 -d foodmart -A -F $',' -o data__employee.csv -c 'SELECT * FROM "public"."employee";'

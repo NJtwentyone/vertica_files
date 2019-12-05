@@ -1,0 +1,5 @@
+KeyColumn,Integer_Column,Smallint_Column,Bigint_Column
+one,2147483647,123,123456789045678
+tree,-123,-11,0
+two,123,0,-12453789542325
+(3 rows)

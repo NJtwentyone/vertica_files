@@ -1,0 +1,1 @@
+vsql -c "SELECT version();"

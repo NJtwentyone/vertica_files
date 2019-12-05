@@ -1,0 +1,1 @@
+ vsql -w pentaho06 -d foodmart -A -F $',' -o data__warehouse_class.csv -c 'SELECT * FROM "public"."warehouse_class";'
